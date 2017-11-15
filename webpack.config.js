@@ -12,7 +12,7 @@ module.exports = {
 		path:__dirname+'/build',//必须写成绝对路径
 //		filename:'app-'+Date.now()+'.js'
 //		filename:'app_[hash].js'
-		filename:'app.js'
+		filename:'app_[hash].js'
 	},
 	devServer:{
 		contentBase:"./build",//本地服务器所加载的页面所在的目录
@@ -27,13 +27,14 @@ module.exports = {
 			filename:'index.html'
 		}),
 		new ExtractTextPlugin({
-			filename:'app.css',
+			filename:'app-[hash].css',
 			allChunks:true
 		}),
 		new webpack.optimize.UglifyJsPlugin({
-	      compress: {
-	        warnings: false
-	      }
+		    
+	        compress: {
+	          warnings: false
+	        }
 	    }),
 	    new webpack.HotModuleReplacementPlugin()//热加载插件
 	],
