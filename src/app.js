@@ -3,7 +3,7 @@ require('./assets/js/scripts.js')
 
 require("./assets/css/style.css")
 require("./libs/btn.css")
-require('./index.html')
+
 
 require.ensure(['./js/splitting_code'], function(require){
 
