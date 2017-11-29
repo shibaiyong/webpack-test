@@ -7,4 +7,4 @@ var summ= function(randomNum){
 	return sumArr;
 }
 
-export {summ}
+export default summ

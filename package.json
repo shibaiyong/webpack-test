@@ -23,6 +23,7 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.29.0",
+    "html-withimg-loader": "^0.1.16",
     "jsx-loader": "^0.13.2",
     "node-sass": "^4.0.0",
     "postcss-loader": "^2.0.8",
