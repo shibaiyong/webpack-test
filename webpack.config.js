@@ -3,7 +3,7 @@ var webpack = require("webpack")
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-
+var webpackServer = require('webpack-dev-server');
 //module.exports = {
 //	//入口文件--主模块
 //	entry:'./src/app.js',
@@ -145,7 +145,7 @@ module.exports = {
 	//入口文件--主模块
 	entry:{
 		'main':'./src/app-many-entry.js',
-		'other-plugin':'./src/assets/js/jquery-1.9.1.min.js'
+		'other-plugin':'./src/assets/js/jquery-1.9.1.min.js'//可以用来打包第三方插件，目的是减少最后打包后文件的体积。
 	},
 	//出口
 	output:{
@@ -175,7 +175,7 @@ module.exports = {
 	          warnings: false
 	        }
 	    }),
-	    new webpack.HotModuleReplacementPlugin(),//热加载插件
+	    //new webpack.HotModuleReplacementPlugin(),//热加载插件
 	    
 		new webpack.optimize.CommonsChunkPlugin({
 		   name:'other-plugin', // 上面入口定义的节点组
@@ -222,9 +222,9 @@ module.exports = {
 		        }
 	      	},
 	      	{
-		　　　　　　test: /\.html$/,
-		　　　　　　loader: 'html-withimg-loader'
-		　　　}
+    　　　　　　test: /\.html$/,
+    　　　　　　loader: 'html-withimg-loader'
+		　　}
         ]
     }
 }
