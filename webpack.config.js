@@ -170,17 +170,16 @@ module.exports = {
 			allChunks:true
 		}),
 		new webpack.optimize.UglifyJsPlugin({
-		    
-	        compress: {
-	          warnings: false
-	        }
-	    }),
+			compress: {
+				warnings: false
+			}
+		}),
 	    //new webpack.HotModuleReplacementPlugin(),//热加载插件
 	    
-		new webpack.optimize.CommonsChunkPlugin({
+		new webpack.optimize.CommonsChunkPlugin({//提取多个入口文件的公共代码。
 		   name:'other-plugin', // 上面入口定义的节点组
 		   filename:'other-plugin.js' //最后生成的文件名
-		})// 拆分插件
+		})
 	],
 
 	module: {
