@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var webpackServer = require('webpack-dev-server');
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin")
 //module.exports = {
 //	//入口文件--主模块
 //	entry:'./src/app.js',
@@ -163,19 +164,13 @@ module.exports = {
     	inline: true//实时刷新
 	},
 	plugins:[
-		new HtmlWebpackPlugin({
-			template:'./src/index.html',
-			filename:'index.html'
-		}),
+		
 		new ExtractTextPlugin({
 			filename:'app-[hash].css',
 			allChunks:true
 		}),
-	
-	    
 		new webpack.optimize.CommonsChunkPlugin({
-		   name:['chunk'], // 上面入口定义的节点组
-		   filename:'common.js' //最后生成的文件名
+		   name:['chunk']
 		})// 拆分插件
 	],
 
