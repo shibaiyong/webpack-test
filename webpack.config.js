@@ -143,9 +143,11 @@ var webpackServer = require('webpack-dev-server');
 
 module.exports = {
 	//入口文件--主模块
+
 	entry:{
-		'main':'./src/app-many-entry.js',
-		'other-plugin':'./src/assets/js/jquery-1.9.1.min.js'//可以用来打包第三方插件，目的是减少最后打包后文件的体积。
+		'entryone':'./src/entry_one.js',
+		'entrytwo':'./src/entry_two.js',
+		'entrythree':'./src/entry_three.js'
 	},
 	//出口
 	output:{
@@ -169,17 +171,12 @@ module.exports = {
 			filename:'app-[hash].css',
 			allChunks:true
 		}),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
-		}),
-	    //new webpack.HotModuleReplacementPlugin(),//热加载插件
+	
 	    
-		new webpack.optimize.CommonsChunkPlugin({//提取多个入口文件的公共代码。
-		   name:'other-plugin', // 上面入口定义的节点组
-		   filename:'other-plugin.js' //最后生成的文件名
-		})
+		new webpack.optimize.CommonsChunkPlugin({
+		   name:['chunk'], // 上面入口定义的节点组
+		   filename:'common.js' //最后生成的文件名
+		})// 拆分插件
 	],
 
 	module: {

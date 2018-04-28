@@ -1,5 +1,4 @@
-var creatNum=(max,min)=>{
-	var rand=Math.floor(Math.random()*(max-min)+min);
-	return rand;
+var firstJs = ()=>{
+	console.log('i am the first js')
 }
-export {creatNum}
+export default firstJs
