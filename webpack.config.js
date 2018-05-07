@@ -154,7 +154,7 @@ module.exports = {
 	output:{
 		path:__dirname+'/build',//必须写成绝对路径
 
-		filename:'app_[hash].js'
+		filename:'[name].js'
 	},
 	devServer:{
 		contentBase:"./build",//本地服务器所加载的页面所在的目录
@@ -164,14 +164,24 @@ module.exports = {
     	inline: true//实时刷新
 	},
 	plugins:[
+		new HtmlWebpackPlugin({
+			template:'./src/index.html',
+			filename:'index.html'
+		}),
 		
 		new ExtractTextPlugin({
-			filename:'app-[hash].css',
+			name:'img/[name].css',
 			allChunks:true
+		}),
+		new webpack.optimize.UglifyJsPlugin({		    
+			compress: {
+				warnings: false
+			}
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
 		   name:['chunk']
 		})// 拆分插件
+
 	],
 
 	module: {
@@ -195,7 +205,7 @@ module.exports = {
                     loader: "style-loader",
                     use:[
                     	{
-                        	loader: "css-loader"
+							loader: "css-loader"
                     	},
 	                    {
 	                        loader: "postcss-loader"
