@@ -1,0 +1,1 @@
+webpackJsonp([1],{2:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var u=function(){console.log("i am the four js")};t.default=u},7:function(e,t){},9:function(e,t,n){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}var o=n(0),c=(u(o),n(2)),f=(u(c),n(1)),i=(u(f),n(7));u(i)}},[9]);

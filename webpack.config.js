@@ -170,7 +170,7 @@ module.exports = {
 		}),
 		
 		new ExtractTextPlugin({
-			name:'img/[name].css',
+			filename:'style.css',
 			allChunks:true
 		}),
 		new webpack.optimize.UglifyJsPlugin({		    
