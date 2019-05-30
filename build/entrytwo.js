@@ -1,1 +1,0 @@
-webpackJsonp([0],{10:function(e,t,n){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}var o=n(0),c=(u(o),n(3)),i=(u(c),n(1)),r=(u(i),n(6));u(r)},3:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var u=function(){console.log("i am the three js")};t.default=u},6:function(e,t){}},[10]);
